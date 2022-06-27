@@ -1,0 +1,9 @@
+{
+  "AccountClass": "AGRIC",
+  "TariffType": {
+    "Electricity": "AGRIC~E-UTAGRC~E-AGRIC-R~FARM",
+    "Water": "AGRIC~W-UTAGRC~W-AGRIC-R~FARM",
+    "WaterWaste": "AGRIC~WT-UTAGRC~WT-AGRIC-R~FARM",
+    "Waste": "AGRIC~WT-UTAGRC~WT-AGRIC-R~FARM"
+  }
+}

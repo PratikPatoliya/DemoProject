@@ -6,7 +6,7 @@ const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
 const Demo2 = (props) => {
-  console.log(props);
+  // console.log(props);
   const Color = props.color;
   const Data = props.data.data;
   const Header = props.data;

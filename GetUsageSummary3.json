@@ -1,0 +1,9 @@
+{
+  "AccountClass": "RES",
+  "TariffType": {
+    "Electricity": "RES~E-UTRESD~NATIONAL~VILLA",
+    "Water": "RES~W-UTRESD~NATIONAL~VILLA",
+    "WaterWaste": "RES~WW-UTRES~~1070",
+    "Waste": "RES~WG-UTRES~~"
+}
+}

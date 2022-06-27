@@ -1,0 +1,9 @@
+{
+  "AccountClass": "COMRC",
+  "TariffType": {
+    "Electricity": "COMRC~E-UTCOMR~E-COMMERCIAL~SHOP",
+    "Water": "COMRC~W-UTCOMR~E-COMMERCIAL~SHOP",
+    "WaterWaste": "COMRC~WW-UTCOMR~E-COMMERCIAL~1040",
+    "Waste": null
+}
+}

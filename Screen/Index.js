@@ -1,5 +1,5 @@
-import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Dimensions, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useState } from 'react'
 import Demo from './Demo'
 import Demo2 from './Demo2'
 import ElectricityImg from '../img/Electricity.js'
@@ -10,112 +10,121 @@ import Header from './Header'
 import Demo3 from './Demo3'
 import Electricity2 from '../img/Electricity2'
 import Demo4 from './Demo4'
+import Demo5 from './Demo5'
+import GetUsageSummary from '../GetUsageSummary.json';
+import GetUsageSummary1 from '../GetUsageSummary1.json';
+import GetUsageSummary2 from '../GetUsageSummary2.json';
+import GetUsageSummary3 from '../GetUsageSummary3.json';
+import tariffBand from '../tariffBand.json'
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
-const Electricity = {
-    headers: 'Electricity Tariff',
-    logo: <ElectricityImg />,
-    data: [
-        {
-            id: 1,
-            title: 'Band 1',
-            billing: '0 – 2,000 kWh',
-            value: 28,
-            valuetype: 'fils/kWh',
-        },
-        {
-            id: 2,
-            title: 'Band 2',
-            billing: '2,000 – 4,000 kWh',
-            value: 33,
-            valuetype: 'fils/kWh',
-        },
-        {
-            id: 3,
-            title: 'Band 3',
-            billing: '4,000 – 6,000 kWh',
-            value: 38,
-            valuetype: 'fils/kWh',
-        },
-        {
-            id: 4,
-            title: 'Band 4',
-            billing: 'Over 6,000 kWh',
-            value: 43,
-            valuetype: 'fils/kWh',
-        },
-    ]
-}
+
+
+
+// const Electricity = {
+//     headers: 'Electricity Tariff',
+//     logo: <ElectricityImg />,
+//     data: [
+//         {
+//             id: 1,
+//             title: 'Band 1',
+//             billing: '0 – 2,000 kWh',
+//             value: 28,
+//             valuetype: 'fils/kWh',
+//         },
+//         {
+//             id: 2,
+//             title: 'Band 2',
+//             billing: '2,000 – 4,000 kWh',
+//             value: 33,
+//             valuetype: 'fils/kWh',
+//         },
+//         {
+//             id: 3,
+//             title: 'Band 3',
+//             billing: '4,000 – 6,000 kWh',
+//             value: 38,
+//             valuetype: 'fils/kWh',
+//         },
+//         {
+//             id: 4,
+//             title: 'Band 4',
+//             billing: 'Over 6,000 kWh',
+//             value: 43,
+//             valuetype: 'fils/kWh',
+//         },
+//     ]
+// }
 const ElectricityColor = [
     {
-        id: 1,
+        bandId: '1',
         color: '#FFF6EF',
         colorleft: '#FAE6D7'
     },
     {
-        id: 2,
+        bandId: '2',
         color: '#FFF2EA',
         colorleft: '#F5CFB8',
     },
     {
-        id: 3,
+        bandId: '3',
         color: '#FFDCC9',
         colorleft: '#EEAF8C'
     },
     {
-        id: 4,
+        bandId: '4',
         color: '#FFCDB6',
         colorleft: '#E89169'
     }
 ]
-const Water = {
-    headers: 'Water Tariff',
-    logo: <WaterImg />,
-    data: [
-        {
-            id: 1,
-            title: 'Band 1',
-            billing: '0 - 27 m3',
-            value: 7.70,
-            valuetype: 'AED/m3',
-        },
-        {
-            id: 2,
-            title: 'Band 2',
-            billing: '27 - 55 m3',
-            value: 8.80,
-            valuetype: 'AED/m3',
-        },
-        {
-            id: 3,
-            title: 'Band 3',
-            billing: 'Over 55 m3',
-            value: 10.10,
-            valuetype: 'AED/m3',
-        },
-    ]
+// const Water = {
+//     headers: 'Water Tariff',
+//     logo: <WaterImg />,
+//     data: [
+//         {
+//             id: 1,
+//             title: 'Band 1',
+//             billing: '0 - 27 m3',
+//             value: 7.70,
+//             valuetype: 'AED/m3',
+//         },
+//         {
+//             id: 2,
+//             title: 'Band 2',
+//             billing: '27 - 55 m3',
+//             value: 8.80,
+//             valuetype: 'AED/m3',
+//         },
+//         {
+//             id: 3,
+//             title: 'Band 3',
+//             billing: 'Over 55 m3',
+//             value: 10.10,
+//             valuetype: 'AED/m3',
+//         },
+//     ]
 
-}
+// }
 const WaterColor = [
     {
-        id: 1,
+        bandId: '1',
         color: '#E9F9FF',
         colorleft: '#CFF2FF'
     },
     {
-        id: 2,
+        bandId: '2',
         color: '#DBF5FF',
         colorleft: '#A1DEF4'
     },
     {
-        id: 3,
+        bandId: '3',
         color: '#CEF2FF',
         colorleft: '#68C3E5'
     },
     {
-        id: 4,
+        bandId: '4',
         color: '#FFCDB6',
         colorleft: '#E89169'
     }
@@ -189,10 +198,94 @@ const WaterConsumption = {
 }
 
 const Index = ({ navigation }) => {
+
+    const [btn, setBtn] = useState('RES')
+
+
+    const RES = GetUsageSummary;
+    const AGRIC = GetUsageSummary1;
+    const COMRC = GetUsageSummary2;
+    const RESNATIONAL = GetUsageSummary3;
+
+    let AccountClass = btn
+
+    switch (AccountClass) {
+        case "RES":
+            AccountClass = RES;
+            break;
+        case "AGRIC":
+            AccountClass = AGRIC;
+            break;
+        case "COMRC":
+            AccountClass = COMRC;
+            break;
+        case "RESNATIONAL":
+            AccountClass = RESNATIONAL;
+            break;
+        default:
+            AccountClass = 'not found';
+            break;
+    }
+
+    const TariffTypeElectricity = AccountClass.TariffType.Electricity;
+    let Electricity;
+    switch (TariffTypeElectricity) {
+        case "RES~E-UTRESD~NORMAL~APT":
+            Electricity = tariffBand.nationalAPTElectricity
+            break;
+        case "AGRIC~E-UTAGRC~E-AGRIC-R~FARM":
+            Electricity = tariffBand.agriAllElectricity
+            break;
+        case "COMRC~E-UTCOMR~E-COMMERCIAL~SHOP":
+            Electricity = tariffBand.commercialAllElectricity
+            break;
+        case "RES~E-UTRESD~NATIONAL~VILLA":
+            Electricity = tariffBand.nationalSocialElectricity
+            break;
+        default:
+            break;
+    }
+    const electricity = Electricity;
+    // console.log("datadatadatadata", data);
+
+
+    const TariffTypeWater = AccountClass.TariffType.Water;
+    let Water;
+    switch (TariffTypeWater) {
+        case "RES~W-UTRESD~NORMAL~APT":
+            Water = tariffBand.nationalAPTWater
+            break;
+        case "AGRIC~W-UTAGRC~W-AGRIC-R~FARM":
+            Water = tariffBand.agriAllWater
+            break;
+        case "COMRC~W-UTCOMR~E-COMMERCIAL~SHOP":
+            Water = tariffBand.commercialAllWater
+            break;
+        case "RES~W-UTRESD~NATIONAL~VILLA":
+            Water = tariffBand.nationalSocialWater
+            break;
+        default:
+            break;
+    }
+    const water = Water;
     return (
         <View>
             <Header title="Understand your tariff" /* inamel="home" */ inamel="chevron-back-outline" isBack={() => navigation.goBack()} />
             <ScrollView>
+                <View style={{flexDirection:'row'}}>
+                    <TouchableOpacity style={[styles.btn, styles.center]} onPress={() => setBtn('RES')}>
+                        <Text>RES</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[styles.btn, styles.center]} onPress={() => setBtn('AGRIC')}>
+                        <Text>AGRIC</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[styles.btn, styles.center]} onPress={() => setBtn('COMRC')}>
+                        <Text>COMRC</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[styles.btn, styles.center]} onPress={() => setBtn('RESNATIONAL')}>
+                        <Text>RESNATIONAL</Text>
+                    </TouchableOpacity>
+                </View>
                 <View style={{ marginHorizontal: 16, marginBottom: 80 }}>
                     <View style={styles.box}>
                         <Text style={styles.boxText}>Your tariff is determined by the type of property you live in and whether you are a UAE National or an expatriate. </Text>
@@ -206,8 +299,8 @@ const Index = ({ navigation }) => {
                             <Text style={styles.box2Font}>Account: 23462764387</Text>
                         </View>
                     </View>
-                    <Demo data={Electricity} color={ElectricityColor} />
-                    <Demo data={Water} color={WaterColor} />
+                    <Demo data={electricity} color={ElectricityColor} headers={'Electricity Tariff'} logo={<ElectricityImg />} />
+                    <Demo data={water} color={WaterColor} headers={'Water Tariff'} logo={<WaterImg />} />
                     <Demo2 data={Waste} color={WasteColor} />
                     <Demo2 data={Wastewater} color={WastewaterColor} />
                     <View style={{ marginTop: 10 }}>
@@ -215,6 +308,7 @@ const Index = ({ navigation }) => {
                         <Demo3 data={WaterConsumption} />
                     </View>
                     <Demo4 />
+                    {/* <Demo5 AccountClass={AccountClass} color={ElectricityColor} headers={'Electricity Tariff'} logo={<ElectricityImg />} /> */}
                 </View>
             </ScrollView>
         </View>
@@ -224,6 +318,15 @@ const Index = ({ navigation }) => {
 export default Index
 
 const styles = StyleSheet.create({
+    btn: {
+        height: height * 0.05,
+        width: width * 0.25,
+        backgroundColor: '#02ccfe',
+    },
+    center: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     box: {
         height: height * 0.15,
         borderRadius: 14,

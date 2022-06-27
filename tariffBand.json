@@ -1,0 +1,429 @@
+{
+  "nationalVillaWater": {
+    "amount": "3.3"
+  },
+  "nationalVillaElectricity": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "7.5",
+        "consumptionRange": "0 - 2,000"
+      },
+      {
+        "bandId": "2",
+        "amount": "9",
+        "consumptionRange": "2,000 - 4,000"
+      },
+      {
+        "bandId": "3",
+        "amount": "10.5",
+        "consumptionRange": "4,000 - 6,000"
+      },
+      {
+        "bandId": "4",
+        "amount": "12",
+        "consumptionRange": "6,000"
+      }
+    ]
+  },
+  "nationalAPTWater": {
+    "amount": "3.3"
+  },
+  "nationalAPTElectricity": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "7.5",
+        "consumptionRange": "0 - 2,000"
+      },
+      {
+        "bandId": "2",
+        "amount": "9",
+        "consumptionRange": "2,000 - 4,000"
+      },
+      {
+        "bandId": "3",
+        "amount": "10.5",
+        "consumptionRange": "4,000 - 6,000"
+      },
+      {
+        "bandId": "4",
+        "amount": "12",
+        "consumptionRange": "6,000"
+      }
+    ]
+  },
+  "nationalSocialWater": {
+    "amount": "3.3"
+  },
+  "nationalSocialElectricity": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "7.5",
+        "consumptionRange": "0 - 2,000"
+      },
+      {
+        "bandId": "2",
+        "amount": "9",
+        "consumptionRange": "2,000 - 4,000"
+      },
+      {
+        "bandId": "3",
+        "amount": "10.5",
+        "consumptionRange": "4,000 - 6,000"
+      },
+      {
+        "bandId": "4",
+        "amount": "12",
+        "consumptionRange": "6,000"
+      }
+    ]
+  },
+
+  "expatVillaWater": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "7.7",
+        "consumptionRange": "0 - 27"
+      },
+      {
+        "bandId": "2",
+        "amount": "8.8",
+        "consumptionRange": "27 - 55"
+      },
+      {
+        "bandId": "3",
+        "amount": "10.1",
+        "consumptionRange": "55"
+      }
+    ]
+  },
+  "expatVillaElectricity": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "28",
+        "consumptionRange": "0 - 2,000"
+      },
+      {
+        "bandId": "2",
+        "amount": "33",
+        "consumptionRange": "2,000 - 4,000"
+      },
+      {
+        "bandId": "3",
+        "amount": "38",
+        "consumptionRange": "4,000 - 6,000"
+      },
+      {
+        "bandId": "4",
+        "amount": "43",
+        "consumptionRange": "6,000"
+      }
+    ]
+  },
+  "expatAPTWater": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "7.7",
+        "consumptionRange": "0 - 27"
+      },
+      {
+        "bandId": "2",
+        "amount": "8.8",
+        "consumptionRange": "27 - 55"
+      },
+      {
+        "bandId": "3",
+        "amount": "10.1",
+        "consumptionRange": "55"
+      }
+    ]
+  },
+  "expatAPTElectricity": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "28",
+        "consumptionRange": "0 - 2,000"
+      },
+      {
+        "bandId": "2",
+        "amount": "33",
+        "consumptionRange": "2,000 - 4,000"
+      },
+      {
+        "bandId": "3",
+        "amount": "38",
+        "consumptionRange": "4,000 - 6,000"
+      },
+      {
+        "bandId": "4",
+        "amount": "43",
+        "consumptionRange": "6,000"
+      }
+    ]
+  },
+  "expatSocialWater": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "7.7",
+        "consumptionRange": "0 - 27"
+      },
+      {
+        "bandId": "2",
+        "amount": "8.8",
+        "consumptionRange": "27 - 55"
+      },
+      {
+        "bandId": "3",
+        "amount": "10.1",
+        "consumptionRange": "55"
+      }
+    ]
+  },
+  "expatSocialElectricity": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "28",
+        "consumptionRange": "0 - 2,000"
+      },
+      {
+        "bandId": "2",
+        "amount": "33",
+        "consumptionRange": "2,000 - 4,000"
+      },
+      {
+        "bandId": "3",
+        "amount": "38",
+        "consumptionRange": "4,000 - 6,000"
+      },
+      {
+        "bandId": "4",
+        "amount": "43",
+        "consumptionRange": "6,000"
+      }
+    ]
+  },
+
+  "agriAllWater": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "3.3",
+        "consumptionRange": "0 - 2.727"
+      },
+      {
+        "bandId": "2",
+        "amount": "4.4",
+        "consumptionRange": "2.727 - 6.819"
+      },
+      {
+        "bandId": "3",
+        "amount": "5.5",
+        "consumptionRange": "6.819"
+      }
+    ]
+  },
+  "agriAllElectricity": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "28",
+        "consumptionRange": "0 - 6,000"
+      },
+      {
+        "bandId": "2",
+        "amount": "33",
+        "consumptionRange": "6,000"
+      }
+    ]
+  },
+  "agriRanchWater": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "3.3",
+        "consumptionRange": "0 - 2.727"
+      },
+      {
+        "bandId": "2",
+        "amount": "4.4",
+        "consumptionRange": "2.727 - 6.819"
+      },
+      {
+        "bandId": "3",
+        "amount": "5.5",
+        "consumptionRange": "6.819"
+      }
+    ]
+  },
+  "agriRanchElectricity": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "28",
+        "consumptionRange": "0 - 6,000"
+      },
+      {
+        "bandId": "2",
+        "amount": "33",
+        "consumptionRange": "6,000"
+      }
+    ]
+  },
+  "commercialAllWater": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "7.7",
+        "consumptionRange": "0 - 45"
+      },
+      {
+        "bandId": "2",
+        "amount": "8.8",
+        "consumptionRange": "45 - 91"
+      },
+      {
+        "bandId": "3",
+        "amount": "10.1",
+        "consumptionRange": "91"
+      }
+    ]
+  },
+  "commercialAllElectricity": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "28",
+        "consumptionRange": "0 - 2,000"
+      },
+      {
+        "bandId": "2",
+        "amount": "33",
+        "consumptionRange": "2,000 - 4,000"
+      },
+      {
+        "bandId": "3",
+        "amount": "38",
+        "consumptionRange": "4,000 - 6,000"
+      },
+      {
+        "bandId": "4",
+        "amount": "43",
+        "consumptionRange": "6,000"
+      }
+    ]
+  },
+  "nationalSocialCardAllWater": {
+    "amount": "3.3"
+  },
+  "nationalSocialCardAllElectricity": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "7.5",
+        "consumptionRange": "0 - 2,000"
+      },
+      {
+        "bandId": "2",
+        "amount": "9",
+        "consumptionRange": "2,000 - 4,000"
+      },
+      {
+        "bandId": "3",
+        "amount": "10.5",
+        "consumptionRange": "4,000 - 6,000"
+      },
+      {
+        "bandId": "4",
+        "amount": "12",
+        "consumptionRange": "6,000"
+      }
+    ]
+  },
+  "expatSocialCardAllWater": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "7.7",
+        "consumptionRange": "0 - 27"
+      },
+      {
+        "bandId": "2",
+        "amount": "8.8",
+        "consumptionRange": "27 - 55"
+      },
+      {
+        "bandId": "3",
+        "amount": "10.1",
+        "consumptionRange": "55"
+      }
+    ]
+  },
+  "expatSocialCardAllElectricity": {
+    "tariffInfo": [
+      {
+        "bandId": "1",
+        "amount": "28",
+        "consumptionRange": "0 - 2,000"
+      },
+      {
+        "bandId": "2",
+        "amount": "33",
+        "consumptionRange": "2,000 - 4,000"
+      },
+      {
+        "bandId": "3",
+        "amount": "38",
+        "consumptionRange": "4,000 - 6,000"
+      },
+      {
+        "bandId": "4",
+        "amount": "43",
+        "consumptionRange": "6,000"
+      }
+    ]
+  },
+  "nationalWasteWater": {
+    "amount": "1.62"
+  },
+  "nonNationalWasteWater": {
+    "amount": "7.06"
+  },
+  "residentialAllWaste": {
+    "amount": "1.919"
+  },
+  "agriAllWasteWater": {
+    "amount": "0.1"
+  },
+  "commercialAllWasteWater": {
+    "amount": "6.6"
+  },
+  "commercialWasteWaterCategoryA": {
+    "amount": "6.6"
+  },
+  "commercialWasteWaterCategoryB": {
+    "amount": "6.24"
+  },
+  "commercialWasteWaterCategoryC": {
+    "amount": "5.51"
+  },
+  "tseAllWasteWater": {
+    "amount": "8.0"
+  },
+  "industrialAllWasteWater": {
+    "amount": "6.6"
+  },
+  "govtAllWasteWater": {
+    "amount": "6.6"
+  },
+  "consentedAllWasteWater": {
+    "amount": "9.9"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "AccountClass": "RES",
+  "TariffType": {
+    "Electricity": "RES~E-UTRESD~NORMAL~APT",
+    "Waste": "RES~WG-UTRES~~",
+    "Water": "RES~W-UTRESD~NORMAL~APT",
+    "WaterWaste": "RES~WW-UTRES~~1080"
+  }
+}

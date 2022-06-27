@@ -90,7 +90,7 @@ const dummyData2 = data2.map(i => {
     }
 })
 
-console.log("dummyDatadummyDatadummyData", dummyData);
+// console.log("dummyDatadummyDatadummyData", dummyData);
 const Demo4 = () => {
 
 
@@ -181,7 +181,7 @@ const Demo4 = () => {
     )
 }
 
-export default Demo4
+export default Demo4;
 
 const styles = StyleSheet.create({
     year: {
