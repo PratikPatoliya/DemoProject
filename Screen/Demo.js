@@ -4,50 +4,48 @@ const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
 const Demo = (props) => {
-  console.log('props', props);
-  const data = props?.data?.tariffInfo
-  const data1 = props?.data
+  const data = props?.data
   const Color = props.color
-  console.log("data", data);
-  console.log("data1", data1);
 
-  const dummyData = data?.map(item => {
-    const colorData = Color?.find(item2 => (item2?.bandId === item?.bandId))
-    if (colorData) {
-      return { ...item, ...colorData }
-    }
-  })
-  console.log("dummyDatadummyData",dummyData);
-
-  // const dummyData1 = data1.find(item =>{
-
+  // const dummyData = data?.map(item => {
+  //   const colorData = Color?.find(item2 => (item2?.bandId === item?.bandId))
+  //   if (colorData) {
+  //     return { ...item, ...colorData }
+  //   }
   // })
- 
+  // console.log("dummyDatadummyData", dummyData);
 
 
-  const renderItem = ({ item }) => (
-    <View style={[styles.item, { backgroundColor: `${item?.color}`, borderLeftColor: `${item?.colorleft}` }]}>
-      <View>
-        <Text style={styles.title}>Band {item?.bandId}</Text>
+  const renderItem = ({ item }) => {
+    const colorData = Color?.find(item2 => (item2?.bandId === item?.bandId))
+    const idata= {...item , ...colorData}
+    return (
+
+      <View style={[styles.item, { backgroundColor:`${idata.color}`, borderLeftColor: `${idata?.colorleft}` }]}>
+        <View>
+          <Text style={styles.title}>Band {idata?.bandId}</Text>
+        </View>
+        <View style={{ alignItems: 'flex-end' }}>
+          <Text style={styles.value}>{idata?.amount} {props.headers == 'Electricity Tariff' ? <Text style={styles.valuetype}>fils/kWh</Text> : <Text style={styles.valuetype}>AED/m3</Text>} </Text>
+          <Text style={styles.billing}>{idata?.consumptionRange} {props.headers == 'Electricity Tariff' ? <Text style={styles.valuetype}>kWh</Text> : <Text style={styles.valuetype}>m3</Text>} per billing cycle</Text>
+        </View>
       </View>
-      <View style={{ alignItems: 'flex-end' }}>
-        <Text style={styles.value}>{item?.amount} {props.headers == 'Electricity Tariff' ? <Text style={styles.valuetype}>fils/kWh</Text> : <Text style={styles.valuetype}>AED/m3</Text>} </Text>
-        <Text style={styles.billing}>{item?.consumptionRange} {props.headers == 'Electricity Tariff' ? <Text style={styles.valuetype}>kWh</Text> : <Text style={styles.valuetype}>m3</Text>} per billing cycle</Text>
-      </View>
-    </View>
-  );
+    )
+  }
 
-  const renderItem1 = ({ item }) => {
-    <View style={[styles.item1, { backgroundColor: `${item?.color}`, borderLeftColor: `${item?.colorleft}` }]}>
-      <Text style={styles.title1}>Fixed tarrif {item?.amount} AED per m3</Text>
-    </View>
+  const renderItem1 = (amount) => {
+    return (
+      <View style={[styles.item1, { backgroundColor: `#E5F3F5`, borderLeftColor: `#298289` }]}>
+        <Text style={styles.title1}>Fixed tarrif {amount} AED per m3</Text>
+      </View>
+    )
   }
 
   return (
     <View style={styles.titleheader}>
       <View style={styles.header}><View style={{ justifyContent: 'center', alignItems: 'center', marginRight: 1, top: 1 }}>{props?.logo}</View><Text style={styles.headertitle}>{props?.headers}</Text></View>
-      {data === undefined? <FlatList data={data1} renderItem={renderItem1} /* keyExtractor={item => item.id} */ />
-      : <FlatList data={dummyData} renderItem={renderItem} /* keyExtractor={item => item.id} */ />}
+      {data?.tariffInfo ? <FlatList data={data?.tariffInfo} renderItem={renderItem} /> : renderItem1(data?.amount)}
+      {/* <FlatList data={data} renderItem={(data) => renderitem(data)}  /> */}
     </View>
   )
 }
